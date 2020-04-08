@@ -1,0 +1,13 @@
+en:
+  js:
+    attendance:
+      title: 'Attendance Manager'
+      delete_subject_label: 'Delete'
+      update_subject_label: 'Update'
+      create_subject:
+        text_field_subject_name_placeholder: 'Subject Name'
+        text_field_mandatory_attendance_placeholder: 'Mandatory Attendance (%)'
+        text_field_lectures_attended_placeholder: 'Lectures Attended'
+        text_field_lectures_bunked_placeholder: 'Lectures Bunked'
+        submit_label_add: 'Add Subject'
+        submit_label_update: 'Update Subject'

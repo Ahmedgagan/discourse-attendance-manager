@@ -1,0 +1,42 @@
+<tr>
+    <td>
+        <label><b>{{data.name}}</b>   </label>
+    </td>
+    <td>
+        {{d-button action=(action 'updateSubjectName' data) label="attendance.update_subject_label"}}
+    </td>
+    <td>
+        {{d-button action=(action 'deleteSubject' data) label="attendance.delete_subject_label"}}
+    </td>
+</tr>
+<tr>
+    <td>
+        <label>Mandatory : {{data.Mandatory}}%</label>
+    </td>
+</tr>
+<tr>
+    <td>
+        <label>Attended : {{data.Attended}}</label>
+    </td>
+    <td>
+        {{d-button action=(action "incAttended") icon="plus"}}
+        {{d-button action=(action "decAttended") icon="minus"}}
+    </td>
+</tr>
+<tr>
+    <td>
+        <label>bunked : {{data.Bunked}}</label>
+    </td>
+    <td>
+        {{d-button action=(action "incBunked") icon="plus"}}
+        {{d-button action=(action "decBunked") icon="minus"}}
+    </td>
+</tr>
+<tr>
+    <td>
+        <center><label>{{percentage}}%</label></center>
+    </td>
+    <td>
+        <center><label>{{canBunk}}</label></center>
+    </td>
+</tr>

@@ -1,0 +1,3 @@
+plugins:
+  attendance_enabled:
+    default: false

@@ -1,0 +1,32 @@
+<center><h1>{{i18n 'attendance.title'}}</h1></center>
+<form >
+    <label>
+        {{input type="text" name='name' value=name placeholder=(i18n 'attendance.create_subject.text_field_subject_name_placeholder') required="true"}}
+    </label>
+    <label>
+        {{input type="number" name='Mandatory' min="1" max="99" value=mandatory placeholder=(i18n 'attendance.create_subject.text_field_mandatory_attendance_placeholder') required="true"}}
+    </label>
+    <label>
+        {{input type="number" name='Attended' min="0" value=attended placeholder=(i18n 'attendance.create_subject.text_field_lectures_attended_placeholder')}}
+    </label>
+    <label>
+        {{input type="number" name='Bunked' min="0" value=bunked placeholder=(i18n 'attendance.create_subject.text_field_lectures_bunked_placeholder')}}
+    </label>
+    {{#if update}}  
+        {{d-button action=(action 'updateNote' name mandatory attended bunked) label = 'attendance.create_subject.submit_label_update'}}
+    {{else}}
+        {{d-button action=(action 'insertNote' name mandatory attended bunked) label = 'attendance.create_subject.submit_label_add'}}
+    {{/if}}
+</form>
+{{#if display}}
+<table cellpadding = "5" cellspacing = "5">
+    <tr>
+        <td><h3>Total Attendance</h3></td>
+        <td><h3>{{totalPercentage}}%</h3></td>
+    </tr>
+    {{#each attendance as |v|}}
+        {{log v}}
+        {{attendance-card data=v updateSubjectName=(action 'updateSubjectName') deleteSubject=(action 'deleteSubject')}}
+    {{/each}}
+</table>
+{{/if}}
